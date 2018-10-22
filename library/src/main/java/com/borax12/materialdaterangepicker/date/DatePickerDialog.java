@@ -990,7 +990,22 @@ public class DatePickerDialog extends DialogFragment implements
     public void tryVibrate() {
         if(mVibrate) mHapticFeedbackController.tryVibrate();
     }
-    
+
+    public void setCancelBackgroundColor(int color) {
+        Button cancelButton = (Button) getView().findViewById(R.id.cancel);
+        if (cancelButton != null) {
+            cancelButton.setBackgroundColor(color);
+        }
+    }
+
+    public void setPositiveButtonBackgroundColor(int color) {
+        Button okButton = (Button) getView().findViewById(R.id.ok);
+        if (okButton != null) {
+            okButton.setBackgroundColor(color);
+        }
+    }
+
+
     /**
      * setStartTitle
      * @param String the title to display for start panel
