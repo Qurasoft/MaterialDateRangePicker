@@ -5,14 +5,14 @@ ext {
     bintrayRepo = 'maven'
     bintrayName = 'material-datetime-rangepicker'
 
-    publishedGroupId = 'com.borax12.materialdaterangepicker'
+    publishedGroupId = 'de.qurasoft'
     libraryName = 'MaterialDateRangePicker'
     artifact = 'library'
 
-    libraryDescription = 'A material Date and Time Range Picker for Android'
+    libraryDescription = 'A material Date and Time Range Picker for Android forked from borax12'
 
-    siteUrl = 'https://github.com/borax12/MaterialDateRangePicker'
-    gitUrl = 'https://github.com/borax12/MaterialDateRangePicker.git'
+    siteUrl = 'https://github.com/Qurasoft/MaterialDateRangePicker'
+    gitUrl = 'https://github.com/Qurasoft/MaterialDateRangePicker.git'
 
     libraryVersion = '1.9'
 
@@ -38,7 +38,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
         }
     }
 }
