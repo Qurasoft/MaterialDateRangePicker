@@ -515,8 +515,8 @@ public abstract class MonthView extends View {
 
             final int startX = (int)(x - dayWidthHalf);
             final int stopX = (int)(x + dayWidthHalf);
-            final int startY = (int)(y - yRelativeToDay);
-            final int stopY = (int)(startY + mRowHeight);
+            final int startY = y - yRelativeToDay;
+            final int stopY = startY + mRowHeight;
 
             drawMonthDay(canvas, mYear, mMonth, dayNumber, x, y, startX, stopX, startY, stopY);
 
@@ -623,11 +623,8 @@ public abstract class MonthView extends View {
         if (isBeforeMin(year, month, day)) {
             return true;
         }
-        else if (isAfterMax(year, month, day)) {
-            return true;
-        }
+        else return isAfterMax(year, month, day);
 
-        return false;
     }
 
     private boolean isSelectable(int year, int month, int day) {
@@ -665,11 +662,7 @@ public abstract class MonthView extends View {
             return false;
         }
 
-        if (day < minDate.get(Calendar.DAY_OF_MONTH)) {
-            return true;
-        } else {
-            return false;
-        }
+        return day < minDate.get(Calendar.DAY_OF_MONTH);
     }
 
     private boolean isAfterMax(int year, int month, int day) {
@@ -693,11 +686,7 @@ public abstract class MonthView extends View {
             return false;
         }
 
-        if (day > maxDate.get(Calendar.DAY_OF_MONTH)) {
-            return true;
-        } else {
-            return false;
-        }
+        return day > maxDate.get(Calendar.DAY_OF_MONTH);
     }
 
     /**
